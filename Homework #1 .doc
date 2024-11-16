@@ -1,0 +1,95 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=Windows-1252"><body><div>
+	<div>
+		<div>
+			using System;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			class Program</div>
+		<div>
+			{</div>
+		<div>
+			&nbsp; &nbsp; static void Main()</div>
+		<div>
+			&nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; Console.Write(&quot;Enter the min number: &quot;);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; int minNumber = int.Parse(Console.ReadLine());</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; Console.Write(&quot;Enter the max number: &quot;);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; int maxNumber = int.Parse(Console.ReadLine());</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; int[,] freqArray = new int[maxNumber - minNumber + 1, 2];</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; freqArray.GetLength(0); i++)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; freqArray[i, 0] = minNumber + i;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; freqArray[i, 1] = 0;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; Random rand = new Random();</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 1000; i++)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int randomNumber = rand.Next(minNumber, maxNumber + 1);</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; freqArray.GetLength(0); j++)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (freqArray[j, 0] == randomNumber)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; freqArray[j, 1]++;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; Console.WriteLine(&quot;\nNumber:&nbsp; &nbsp; &nbsp; &nbsp;Frequency:&quot;);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; freqArray.GetLength(0); i++)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Console.WriteLine($&quot;{freqArray[i, 0]} \t\t\t {freqArray[i, 1]}&quot;);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; }</div>
+		<div>
+			}</div>
+		<div>
+			&nbsp;</div>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+</body></html>
